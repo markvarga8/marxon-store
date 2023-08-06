@@ -12,7 +12,6 @@ interface CurrencyProps {
 }
 
 const Currency: React.FC<CurrencyProps> = ({ value }) => {
-
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -23,7 +22,12 @@ const Currency: React.FC<CurrencyProps> = ({ value }) => {
     return null;
   }
 
-  return <div className="font-semibold">{formatter.format(value)}</div>;
+  const formattedValue =
+    typeof value === "number" ? value : parseFloat(value ?? "0");
+
+  return (
+    <div className="font-semibold">{formatter.format(formattedValue)}</div>
+  );
 };
 
 export default Currency;
