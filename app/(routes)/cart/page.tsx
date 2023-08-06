@@ -1,5 +1,3 @@
-"use client";
-
 import CartItem from "@/components/cart-item";
 import useCart from "@/hooks/use-cart";
 import Container from "@/components/ui/Container";
