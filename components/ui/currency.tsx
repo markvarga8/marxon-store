@@ -26,7 +26,9 @@ const Currency: React.FC<CurrencyProps> = ({ value }) => {
     typeof value === "number" ? value : parseFloat(value ?? "0");
 
   return (
-    <div className="font-semibold">{formatter.format(formattedValue)}</div>
+    <div className="font-semibold">
+      <p>{formatter.format(formattedValue)}</p>
+    </div>
   );
 };
 
